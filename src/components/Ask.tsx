@@ -110,7 +110,7 @@ export function Ask({ catalog, onOpen }: AskProps) {
           <p className="footnote">
             {result.mode === "ai"
               ? "Answered only from the experiment records in this atlas."
-              : "Offline mode: add an API key to get written answers."}
+               : "Showing the closest records without AI. Ask again for a written answer."}
           </p>
         </section>
       )}

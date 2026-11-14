@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+const PREFERRED = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const API_KEY = process.env.GEMINI_API_KEY;
+const BASE = "https://generativelanguage.googleapis.com/v1beta";
 
 const SYSTEM = `You answer questions about NASA microgravity fire experiments for an atlas used by people planning fire safety for crewed Moon and Mars missions.
 
@@ -59,8 +60,34 @@ function offlineAnswer(question, experiments, intro) {
   };
 }
 
+// Your preferred model first, then up to two other Flash models your key can use.
+async function pickModels() {
+  const models = [PREFERRED];
+  try {
+    const response = await fetch(`${BASE}/models?pageSize=100`, {
+      headers: { "x-goog-api-key": API_KEY },
+      signal: AbortSignal.timeout(3000),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      const found = (data.models ?? [])
+        .filter((m) => (m.supportedGenerationMethods ?? []).includes("generateContent"))
+        .map((m) => String(m.name).replace(/^models\//, ""))
+        .filter((name) => /flash/.test(name))
+        .filter((name) => !/(image|tts|live|audio|embed|thinking|exp|robotics|computer)/.test(name))
+        .sort()
+        .reverse();
+      for (const name of found) {
+        if (!models.includes(name)) models.push(name);
+      }
+    }
+  } catch {
+    // If the list can't be fetched, just use the preferred model.
+  }
+  return models.slice(0, 3);
+}
+
 async function askAI(question, experiments) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
   const payload = JSON.stringify({
     systemInstruction: { parts: [{ text: SYSTEM }] },
     contents: [
@@ -76,40 +103,53 @@ async function askAI(question, experiments) {
     generationConfig: { maxOutputTokens: 2000, temperature: 0.2 },
   });
 
-  let lastStatus = 0;
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-goog-api-key": API_KEY },
-      body: payload,
-      signal: AbortSignal.timeout(20000),
-    });
+  const reasons = [];
+  const models = await pickModels();
 
-    if (response.status === 503 || response.status === 429) {
-      lastStatus = response.status;
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      continue;
+  for (const model of models) {
+    try {
+      const response = await fetch(`${BASE}/models/${model}:generateContent`, {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-goog-api-key": API_KEY },
+        body: payload,
+        signal: AbortSignal.timeout(7000),
+      });
+
+      // Busy, out of quota, or model missing: try the next model.
+      if ([429, 503, 404].includes(response.status)) {
+        reasons.push(`${model}: ${response.status}`);
+        continue;
+      }
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`AI service error ${response.status} on ${model}: ${text.slice(0, 300)}`);
+      }
+
+      const data = await response.json();
+      const answer = (data.candidates?.[0]?.content?.parts ?? [])
+        .map((part) => part.text ?? "")
+        .join("\n")
+        .trim();
+      if (!answer) {
+        reasons.push(`${model}: empty answer`);
+        continue;
+      }
+
+      const known = new Set(experiments.map((e) => e.id));
+      const cited = [...answer.matchAll(/\[([a-z0-9-]+)\]/g)].map((m) => m[1]).filter((id) => known.has(id));
+      return { answer, sources: [...new Set(cited)], mode: "ai", model };
+    } catch (error) {
+      if (error.name === "TimeoutError") {
+        reasons.push(`${model}: too slow`);
+        continue;
+      }
+      throw error;
     }
-    if (!response.ok) {
-      const text = await response.text();
-      throw new Error(`AI service error ${response.status}: ${text.slice(0, 300)}`);
-    }
-
-    const data = await response.json();
-    const answer = (data.candidates?.[0]?.content?.parts ?? [])
-      .map((part) => part.text ?? "")
-      .join("\n")
-      .trim();
-    if (!answer) throw new Error("The AI returned an empty answer. Try rephrasing the question.");
-
-    const known = new Set(experiments.map((e) => e.id));
-    const cited = [...answer.matchAll(/\[([a-z0-9-]+)\]/g)].map((m) => m[1]).filter((id) => known.has(id));
-    return { answer, sources: [...new Set(cited)], mode: "ai" };
   }
 
-  const busy = new Error(`The AI service is busy (status ${lastStatus}).`);
-  busy.temporary = true;
-  throw busy;
+  const failure = new Error(reasons.join(", ") || "no model answered");
+  failure.temporary = true;
+  throw failure;
 }
 
 export default async function handler(req, res) {
@@ -137,9 +177,13 @@ export default async function handler(req, res) {
     try {
       return res.status(200).json(await askAI(question.trim(), experiments));
     } catch (error) {
-      if (error.temporary || error.name === "TimeoutError") {
+      if (error.temporary) {
         return res.status(200).json(
-          offlineAnswer(question, experiments, "The AI is busy right now, so here are the closest records instead:"),
+          offlineAnswer(
+            question,
+            experiments,
+            `The AI could not answer right now (${error.message}), so here are the closest records instead:`,
+          ),
         );
       }
       throw error;
