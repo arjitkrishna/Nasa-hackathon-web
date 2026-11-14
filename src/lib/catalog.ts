@@ -1,4 +1,4 @@
-import { DIMENSIONS, type Experiment, type ExperimentStatus, type FireInsight, type OriginalDatum, type SourceLink } from "../types";
+import { DIMENSIONS, type Conditions, type Experiment, type ExperimentStatus, type FireInsight, type OriginalDatum, type SourceLink } from "../types";
 const STATUSES = new Set<ExperimentStatus>(["completed", "active", "in-analysis", "series"]);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -57,6 +57,27 @@ function optionalInsight(value: unknown, label: string): FireInsight | null {
     design: requiredString(value.design, `${label} insight design`),
   };
 }
+function optionalText(value: unknown, label: string): string {
+  if (value === undefined) return "";
+  return requiredString(value, label);
+}
+
+const CONDITION_FIELDS = ["oxygenMin", "oxygenMax", "pressureMin", "pressureMax", "flowMin", "flowMax"] as const;
+
+function optionalConditions(value: unknown, label: string): Conditions {
+  if (value === undefined) return {};
+  if (!isRecord(value)) throw new Error(`${label} conditions must be an object.`);
+  const result: Conditions = {};
+  for (const field of CONDITION_FIELDS) {
+    const entry = value[field];
+    if (entry === undefined) continue;
+    if (typeof entry !== "number" || !Number.isFinite(entry) || entry < 0) {
+      throw new Error(`${label} conditions ${field} must be a number of 0 or more.`);
+    }
+    result[field] = entry;
+  }
+  return result;
+}
 
 export function loadCatalog(raw: unknown): Experiment[] {
   if (!Array.isArray(raw)) {
@@ -106,6 +127,10 @@ export function loadCatalog(raw: unknown): Experiment[] {
       sources: requiredSources(item.sources, where),
       original: optionalOriginal(item.original, where),
       insight: optionalInsight(item.insight, where),
+      fuel: optionalText(item.fuel, `${where} fuel`),
+      hardware: optionalText(item.hardware, `${where} hardware`),
+      measurements: optionalText(item.measurements, `${where} measurements`),
+      conditions: optionalConditions(item.conditions, where),
     };
   });
 }

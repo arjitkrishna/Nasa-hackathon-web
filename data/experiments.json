@@ -17,10 +17,14 @@
       "Before these tests, spacecraft designers had to base fire safety on 1-g understanding of flame spread, detection and suppression."
     ],
     "meaning": "Fire in space does not behave like a scaled-up Earth fire, so Earth-based safety assumptions need testing at real scale.",
-        "insight": {
+       "insight": {
       "crew": "Do not assume a fire will grow and spread the way it would on Earth. In the large-scale test, spread was qualitatively different.",
       "design": "Safety designs that rely on 1-g flame behavior need to be checked with tests at realistic scale."
     },
+       "fuel": "Fiberglass-cotton fabric, 94 x 40.6 cm sample",
+       "hardware": "Unoccupied Cygnus resupply spacecraft",
+       "measurements": "Flame spread with and against the airflow",
+       "conditions": { "flowMin": 20, "flowMax": 20 },
     "limits": [
       "The early flights focused on thin fuels, using a single fabric type.",
       "The cited results are preliminary."
@@ -69,6 +73,9 @@
       "crew": "Plan for smoke and toxic gas, not heat. CO2, CO and acid gases mattered more than temperature or pressure, so air monitoring and post-fire cleanup are key.",
       "design": "Size detection and cleanup systems for gas and smoke hazards, and test the materials planned for the vehicle at scale."
     },
+        "fuel": "PMMA, SIBAL fabric, thin cotton, Nomex",
+       "hardware": "Unoccupied Cygnus resupply spacecraft, about 19 m3",
+       "measurements": "Acid gases (HCl, HF), CO2, CO, O2, aerosols, heat release",
     "limits": [
       "The published papers describe these results as preliminary.",
       "Tests ran in an uncrewed Cygnus vehicle with a pressurized volume of about 19 m3, not in a crewed habitat."
@@ -119,6 +126,10 @@
       "crew": "A flame that looks out may still be burning as a cool flame, so confirm a fire is really out before calling it safe.",
       "design": "Set suppressant and atmosphere targets from measured low-gravity oxygen limits, not Earth values."
     },
+        "fuel": "Heptane and methanol droplets, 1.5 to 5.0 mm",
+        "hardware": "Multi-user Droplet Combustion Apparatus in the Combustion Integrated Rack",
+        "measurements": "Limiting oxygen index, droplet burning and extinction",
+        "conditions": { "oxygenMin": 10, "oxygenMax": 40, "pressureMin": 0.7, "pressureMax": 3.0 },
     "limits": [
       "The tests used liquid fuel droplets, not the solid materials found in a cabin.",
       "The first experiments used only heptane and methanol."
@@ -169,6 +180,10 @@
       "crew": "A small, dim flame in slow airflow can flare up when airflow suddenly increases, so be careful with ventilation changes during a fire.",
       "design": "Treat ventilation control as a safety lever, and screen materials knowing that flames can persist at lower oxygen than on Earth."
     },
+        "fuel": "Thin and thick flat samples, acrylic slabs, spheres and cylinders",
+       "hardware": "Microgravity Science Glovebox with a modular fan-driven flow duct",
+        "measurements": "Flame spread, flame appearance, heat release",
+       "conditions": { "oxygenMin": 17, "oxygenMax": 22, "flowMin": 0, "flowMax": 53 },
     "limits": [
       "Samples were small and burned in a glovebox wind tunnel, not a full cabin.",
       "The hardware could not raise oxygen above 22 percent."
@@ -219,6 +234,9 @@
       "crew": "Results are still emerging, so use this as an early guide to when solid materials keep burning or go out, not as a final rule.",
       "design": "Use it to check whether Earth-based material screening tests predict low-gravity burning once the full results are published."
     },
+        "fuel": "4 cm diameter acrylic (PMMA) sphere",
+       "hardware": "Combustion Integrated Rack",
+       "conditions": { "oxygenMin": 13, "oxygenMax": 28, "pressureMin": 1, "pressureMax": 1, "flowMin": 0.2, "flowMax": 80 },
     "limits": [
       "Samples are acrylic spheres, not finished spacecraft materials.",
       "Published results are early, and the project was scheduled to operate through February 2025."
@@ -271,6 +289,10 @@
       "crew": "A fire in a narrow gap or behind panels may behave differently from one in open cabin space, since enclosure changes how it grows.",
       "design": "Include enclosure geometry and wall materials in fire safety design and codes, because they can strengthen or weaken a fire."
     },
+        "fuel": "SIBAL cotton-fiberglass fabric and 1 mm thick PMMA slab",
+       "hardware": "BASS flow duct in the Microgravity Science Glovebox",
+       "measurements": "Flame length and flame spread rate",
+       "conditions": { "flowMin": 2.6, "flowMax": 10.5 },
     "limits": [
       "The tests used a thin cotton-fiberglass fabric, plus acrylic in the opposed-flow tests, in small ducts.",
       "The steady-flame finding applies to low flow speeds, below 15 cm/s."

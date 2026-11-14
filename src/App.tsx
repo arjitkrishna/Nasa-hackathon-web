@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Ask } from "./components/Ask";
 import { Compare } from "./components/Compare";
 import { Dossier } from "./components/Dossier";
+import { Habitat } from "./components/Habitat";
 import { FiltersPanel, WeightsPanel } from "./components/Panels";
 import { Stage } from "./components/Stage";
 import { uniqueValues } from "./lib/catalog";
@@ -10,12 +11,13 @@ import type { Experiment, Weights } from "./types";
 
 const MAX_PINS = 3;
 
-type View = "filters" | "weights" | "compare" | "ask";
+type View = "filters" | "weights" | "compare" | "habitat" | "ask";
 
 const TITLES: Record<View, string> = {
   filters: "Search & filters",
   weights: "Weights",
   compare: "Compare",
+  habitat: "Habitat match",
   ask: "Ask the atlas",
 };
 
@@ -23,6 +25,7 @@ const HINTS: Record<View, string> = {
   filters: "Find an experiment by name, domain or platform",
   weights: "Decide what matters to you",
   compare: "Read pinned experiments side by side",
+  habitat: "Which experiments fit a station, Moon base or spacesuit?",
   ask: "Ask a fire safety question, answered from the record",
 };
 
@@ -99,6 +102,7 @@ export function App({ catalog, catalogError }: AppProps) {
     filters: activeFilters ? `${activeFilters} active` : `${visible.length} of ${catalog.length}`,
     weights: PRESETS.find((preset) => preset.id === activePreset)?.label ?? "Custom",
     compare: `${pinnedIds.length} of ${MAX_PINS}`,
+    habitat: "Match",
     ask: "AI",
   };
 
@@ -202,9 +206,11 @@ export function App({ catalog, catalogError }: AppProps) {
 
           {view === "compare" && <Compare entries={pinned} onRemove={togglePin} onOpen={setSelectedId} />}
 
+          {view === "habitat" && <Habitat catalog={catalog} onOpen={setSelectedId} />}
+
           {view === "ask" && <Ask catalog={catalog} onOpen={setSelectedId} />}
 
-          {view !== "ask" && (
+          {view !== "ask" && view !== "habitat" && (
             <div className="panel-ranking">
               <Stage
                 entries={visible}

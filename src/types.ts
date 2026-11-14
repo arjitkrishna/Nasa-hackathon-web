@@ -65,6 +65,19 @@ export interface Experiment {
   sources: SourceLink[];
   original: OriginalDatum[];
   insight: FireInsight | null;
+  fuel: string;
+  hardware: string;
+  measurements: string;
+  conditions: Conditions;
+
+}
+export interface Conditions {
+  oxygenMin?: number; // percent oxygen by volume
+  oxygenMax?: number;
+  pressureMin?: number; // atmospheres
+  pressureMax?: number;
+  flowMin?: number; // airflow speed, cm/s
+  flowMax?: number;
 }
 
 export interface RankedExperiment {

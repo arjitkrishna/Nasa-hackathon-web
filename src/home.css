@@ -16,7 +16,7 @@
 
 .home-nav {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
   margin-top: 36px;
 }
@@ -136,3 +136,14 @@
 .ask-answer { margin-top: 20px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--bg-2); }
 .ask-text { margin: 0 0 12px; white-space: pre-wrap; font-size: 16px; }
 .ask-error { margin-top: 16px; color: var(--coral); }
+.habitat-note { color: var(--muted); font-size: 14px; max-width: 720px; }
+.habitat-custom { display: grid; gap: 4px; max-width: 420px; margin-top: 8px; }
+.match-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.match-row { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; padding: 16px 0; border-top: 1px solid var(--line); align-items: start; }
+.match-row h3 { margin: 0; font-size: 22px; }
+.match-row small { display: block; color: var(--muted); margin-top: 4px; line-height: 1.4; font-size: 13px; }
+.match-side { display: grid; justify-items: end; gap: 8px; }
+.match-score { font-family: "IBM Plex Mono", ui-monospace, monospace; color: var(--lime); font-size: 22px; }
+.match-row.is-unknown .match-score { color: var(--quiet); font-size: 14px; }
+.match-bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: rgba(244, 238, 228, 0.1); overflow: hidden; }
+.match-bar span { display: block; height: 100%; background: var(--lime); }

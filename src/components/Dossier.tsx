@@ -10,6 +10,13 @@ interface DossierProps {
   onPin: (id: string) => void;
 }
 
+function range(min: number | undefined, max: number | undefined, unit: string): string {
+  if (min === undefined && max === undefined) return "Not reported";
+  if (min !== undefined && max !== undefined) return min === max ? `${min} ${unit}` : `${min} to ${max} ${unit}`;
+  if (max !== undefined) return `up to ${max} ${unit}`;
+  return `from ${min} ${unit}`;
+}
+
 export function Dossier({ entry, weights, pinned, onPin }: DossierProps) {
   const [copied, setCopied] = useState(false);
   const [showOriginal, setShowOriginal] = useState(false);
@@ -102,6 +109,36 @@ export function Dossier({ entry, weights, pinned, onPin }: DossierProps) {
         </section>
       )}
 
+      <section className="setup">
+        <h3>Test setup</h3>
+        <dl className="original-data">
+          <div>
+            <dt>Fuel</dt>
+            <dd>{experiment.fuel || "Not listed"}</dd>
+          </div>
+          <div>
+            <dt>Hardware</dt>
+            <dd>{experiment.hardware || "Not listed"}</dd>
+          </div>
+          <div>
+            <dt>Measurements</dt>
+            <dd>{experiment.measurements || "Not listed"}</dd>
+          </div>
+          <div>
+            <dt>Oxygen</dt>
+            <dd>{range(experiment.conditions.oxygenMin, experiment.conditions.oxygenMax, "%")}</dd>
+          </div>
+          <div>
+            <dt>Pressure</dt>
+            <dd>{range(experiment.conditions.pressureMin, experiment.conditions.pressureMax, "atm")}</dd>
+          </div>
+          <div>
+            <dt>Airflow</dt>
+            <dd>{range(experiment.conditions.flowMin, experiment.conditions.flowMax, "cm/s")}</dd>
+          </div>
+        </dl>
+      </section>
+      
       <section>
         <h3>Reading</h3>
         <p className="headline">{reading.headline}</p>
