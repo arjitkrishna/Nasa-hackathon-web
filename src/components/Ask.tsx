@@ -18,6 +18,11 @@ const EXAMPLES = [
   "What do we still not know about fires on the Moon or Mars?",
 ];
 
+function renderBold(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? <strong key={index}>{part.slice(2, -2)}</strong> : part,
+  );
+}
 export function Ask({ catalog, onOpen }: AskProps) {
   const [question, setQuestion] = useState("");
   const [busy, setBusy] = useState(false);
@@ -97,7 +102,7 @@ export function Ask({ catalog, onOpen }: AskProps) {
 
       {result && (
         <section className="ask-answer" aria-live="polite">
-          <p className="ask-text">{shown}</p>
+          <p className="ask-text">{renderBold(shown)}</p>
           {result.sources.length > 0 && (
             <div className="presets">
               {result.sources.map((id) => (
