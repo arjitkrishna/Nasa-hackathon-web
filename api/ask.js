@@ -75,8 +75,7 @@ async function pickModels() {
         .map((m) => String(m.name).replace(/^models\//, ""))
         .filter((name) => /flash/.test(name))
         .filter((name) => !/(image|tts|live|audio|embed|thinking|exp|robotics|computer)/.test(name))
-        .sort()
-        .reverse();
+                .sort((a, b) => Number(/lite/.test(b)) - Number(/lite/.test(a)) || b.localeCompare(a));
       for (const name of found) {
         if (!models.includes(name)) models.push(name);
       }
@@ -103,6 +102,7 @@ async function askAI(question, experiments) {
     generationConfig: { maxOutputTokens: 2000, temperature: 0.2 },
   });
 
+  const deadline = Date.now() + 24000;
   const reasons = [];
   const models = await pickModels();
 
@@ -112,7 +112,7 @@ async function askAI(question, experiments) {
         method: "POST",
         headers: { "content-type": "application/json", "x-goog-api-key": API_KEY },
         body: payload,
-        signal: AbortSignal.timeout(7000),
+                signal: AbortSignal.timeout(Math.max(2000, Math.min(18000, deadline - Date.now()))),
       });
 
       // Busy, out of quota, or model missing: try the next model.
