@@ -1,0 +1,87 @@
+/* Minimalist homepage. Loaded after styles.css, so it overrides where needed. */
+
+.home {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 14vh 24px 80px;
+  transition: padding 0.25s ease;
+}
+.home.has-panel { padding-top: 48px; }
+
+.home-brand .mark { font-size: clamp(48px, 9vw, 88px); line-height: 0.95; }
+.home-brand h1 { margin: 12px 0 0; font-size: 22px; color: var(--muted); font-weight: 400; }
+.home-brand .lede { max-width: 520px; margin-top: 14px; }
+.home.has-panel .home-brand .mark { font-size: 40px; }
+.home.has-panel .home-brand .lede { display: none; }
+
+.home-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 36px;
+}
+.nav-btn {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%), var(--bg-2);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.nav-btn:hover { border-color: rgba(223, 242, 90, 0.5); transform: translateY(-1px); }
+.nav-btn.is-on { border-color: rgba(223, 242, 90, 0.7); }
+.nav-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.nav-btn strong { font-size: 18px; font-weight: 600; }
+.nav-btn em { font-style: normal; color: var(--lime); font-size: 12px; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.nav-btn small { color: var(--muted); font-size: 13px; }
+
+.panel { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.panel-head h2 { margin: 0; font-size: 30px; }
+.panel-head > div { display: flex; gap: 8px; flex-wrap: wrap; }
+.panel .weights { margin-top: 0; }
+.panel .stage { padding: 0; overflow: visible; }
+.panel .compare {
+  grid-column: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--bg-2);
+  margin-top: 16px;
+}
+.panel .compare ul { gap: 20px; }
+.panel .search, .panel .filter { max-width: 420px; }
+
+/* Reading panel slides in from the right when an experiment is selected. */
+.drawer-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: 20; }
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(460px, 100%);
+  z-index: 21;
+  overflow: auto;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.drawer .dossier { min-height: 100%; overflow: visible; box-shadow: none; }
+.drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  color: var(--paper-ink);
+  border-color: rgba(34, 28, 22, 0.25);
+  background: var(--paper);
+}
+
+.panel-ranking { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.panel .stage-head { grid-template-columns: 1fr; gap: 8px; }
+.panel .stage-head h2 { font-size: clamp(28px, 3.5vw, 44px); }
+@media (max-width: 560px) {
+  .home { padding-top: 8vh; }
+  .home-nav { grid-template-columns: 1fr; }
+  .panel-head { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,566 @@
+[
+  {
+    "id": "twins-study",
+    "name": "NASA Twins Study",
+    "aka": "Scott and Mark Kelly",
+    "program": "Human Research Program",
+    "center": "NASA Johnson Space Center",
+    "years": "2015–2016, published 2019",
+    "status": "completed",
+    "domain": "Human research",
+    "platform": "ISS",
+    "summary": "Scott Kelly spent 340 days on the International Space Station while his identical twin, Mark, stayed on Earth. Ten research groups compared samples and tests taken before, during, and after the flight.",
+    "findings": [
+      "Telomeres in Scott’s white blood cells lengthened during flight and shortened rapidly after he returned.",
+      "Most measured changes, including much of the gene-expression shift, moved back toward baseline in the months after landing.",
+      "A smaller set of changes, including some immune and DNA-repair signals, was still different at the end of the study window.",
+      "The investigators themselves note that one flyer cannot separate a spaceflight cause from a coincidence."
+    ],
+    "meaning": "A year in orbit did not leave a single irreversible signature across the body. It left a mostly reversible profile, with a few measures that recovered slowly. The useful product is the measurement map: what to sample, when, and which changes are large enough to watch on later crews.",
+    "limits": [
+      "One spaceflight subject. The twin control removes some genetic noise and still cannot prove cause.",
+      "The published window does not say what a multi-year Mars transit would do."
+    ],
+    "openQuestions": [
+      "Which of the slow-recovering measures show up again in a larger crew?",
+      "Do the telomere changes matter for health, or are they a passenger of the flight?"
+    ],
+    "scores": {
+      "impact": 90,
+      "evidence": 62,
+      "openness": 84,
+      "exploration": 93,
+      "clarity": 70
+    },
+    "sources": [
+      {
+        "label": "Science paper on the Twins Study",
+        "url": "https://www.science.org/doi/10.1126/science.aau8650"
+      }
+    ]
+  },
+  {
+    "id": "veg-01",
+    "name": "VEG-01 Veggie lettuce",
+    "aka": "Outredgeous red romaine",
+    "program": "Space Biology / Veggie",
+    "center": "NASA Kennedy Space Center",
+    "years": "2014–2015",
+    "status": "completed",
+    "domain": "Biology",
+    "platform": "ISS",
+    "summary": "The Veggie plant unit grew Outredgeous red romaine lettuce in plant pillows under red, blue, and green LEDs. A 2014 crop returned frozen for lab work. In 2015 the crew ate part of a second crop.",
+    "findings": [
+      "The first crop grew for 33 days. No pathogens were found, and microbial counts on the leaves were in a range that let flight doctors approve later tasting.",
+      "Anthocyanins matched the ground control. Antioxidant and phenolic levels were slightly higher in the flight plants.",
+      "Watering was uneven. Pillows ran too dry or too wet, and later zinnia tests also met fungal growth.",
+      "Crew tasting was a safety and operations milestone, not a nutrition study of a full diet."
+    ],
+    "meaning": "Pick-and-eat salad is possible on station, with sanitizing wipes and a crop set aside for the lab. The open problem is horticulture under real crew time: water, mold, and a repeatable pillow, not whether a leaf can form at all.",
+    "limits": [
+      "A few small crops. Results describe this hardware and this cultivar.",
+      "Ground controls match cabin air as well as a chamber can, not every detail of station life."
+    ],
+    "openQuestions": [
+      "What watering and cleaning routine keeps a crop safe without a researcher on console?",
+      "How large a fraction of calories can flight crops actually cover?"
+    ],
+    "scores": {
+      "impact": 78,
+      "evidence": 74,
+      "openness": 80,
+      "exploration": 88,
+      "clarity": 86
+    },
+    "sources": [
+      {
+        "label": "VEG-01 validation report",
+        "url": "https://ntrs.nasa.gov/citations/20150021302"
+      },
+      {
+        "label": "Veggie hardware and 2015 tasting",
+        "url": "https://ntrs.nasa.gov/citations/20160004060"
+      }
+    ]
+  },
+  {
+    "id": "moxie",
+    "name": "MOXIE",
+    "aka": "Mars Oxygen In-Situ Resource Utilization Experiment",
+    "program": "Mars 2020 Perseverance",
+    "center": "NASA Jet Propulsion Laboratory / MIT",
+    "years": "2021–2023",
+    "status": "completed",
+    "domain": "Exploration",
+    "platform": "Mars",
+    "summary": "MOXIE rode inside Perseverance and pulled carbon dioxide from the Martian air, then split it in a solid-oxide electrolyzer to make oxygen. It ran in day and night and across a full Martian year.",
+    "findings": [
+      "The instrument made 122 grams of oxygen in total, about what a small dog breathes in 10 hours.",
+      "Its best rate was 12 grams of oxygen an hour, twice the original goal, at 98 percent purity or better.",
+      "It finished every technical requirement NASA set for the demonstration.",
+      "A crew-scale plant would need to be hundreds of times larger. The test does not size that plant by itself."
+    ],
+    "meaning": "Making oxygen on Mars is no longer only a paper study. A toaster-sized unit survived the real atmosphere and the real power budget. The next argument is about mass, dust, and lifetime of a plant big enough to fill a Mars ascent rocket, which needs tons of oxygen, not grams.",
+    "limits": [
+      "One prototype, operated as a payload, not as life support or propellant hardware.",
+      "Purity and rate were demonstrated. Multi-year unattended operation was not."
+    ],
+    "openQuestions": [
+      "Which parts wear first when the unit is scaled and left running?",
+      "How should a later plant share power with a crew habitat?"
+    ],
+    "scores": {
+      "impact": 94,
+      "evidence": 93,
+      "openness": 76,
+      "exploration": 98,
+      "clarity": 95
+    },
+    "sources": [
+      {
+        "label": "NASA closeout of the MOXIE mission",
+        "url": "https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/nasas-oxygen-generating-experiment-moxie-completes-mars-mission/"
+      }
+    ]
+  },
+  {
+    "id": "cold-atom-lab",
+    "name": "Cold Atom Lab",
+    "aka": "CAL",
+    "program": "Fundamental Physics",
+    "center": "NASA Jet Propulsion Laboratory",
+    "years": "2018–ongoing",
+    "status": "active",
+    "domain": "Physics",
+    "platform": "ISS",
+    "summary": "Cold Atom Lab cools clouds of atoms to a sliver above absolute zero and makes Bose-Einstein condensates aboard the station. Microgravity lets those clouds expand and be observed longer than they can in a lab that has to fight Earth’s gravity.",
+    "findings": [
+      "The facility has produced and studied ultracold quantum gases in orbit, work that ground traps can hold only briefly.",
+      "Later hardware added interferometry so the same clouds can be used as precision sensors.",
+      "The science is a stream of investigator runs, not one single headline number.",
+      "Operating a dilution-style ultracold machine inside a crewed vehicle was itself part of the result."
+    ],
+    "meaning": "Orbit turned a fragile laboratory species into a facility other groups can book. The near-term value is longer, colder, quieter measurements of quantum gases. Atom interferometers on this pattern are also a candidate sensor for gravity and for tests of fundamental physics.",
+    "limits": [
+      "A facility record is easier to over-read than a single published effect.",
+      "Many results live in investigator papers rather than one NASA summary page."
+    ],
+    "openQuestions": [
+      "Which measurement is actually better in orbit than in the best ground lab?",
+      "Can the same methods fly on a free-flyer without a crew nearby?"
+    ],
+    "scores": {
+      "impact": 84,
+      "evidence": 80,
+      "openness": 68,
+      "exploration": 55,
+      "clarity": 64
+    },
+    "sources": [
+      {
+        "label": "Cold Atom Lab at JPL",
+        "url": "https://coldatomlab.jpl.nasa.gov/"
+      }
+    ]
+  },
+  {
+    "id": "ams-02",
+    "name": "Alpha Magnetic Spectrometer",
+    "aka": "AMS-02",
+    "program": "ISS cosmic-ray investigation",
+    "center": "DOE / NASA / CERN collaboration",
+    "years": "2011–ongoing",
+    "status": "active",
+    "domain": "Physics",
+    "platform": "ISS",
+    "summary": "AMS-02 is a magnetic spectrometer mounted on the station’s truss. It has logged cosmic-ray particles by the tens of billions, separating charge and mass with a rigidity measurement that balloon flights could only sample in short bursts.",
+    "findings": [
+      "The positron fraction rises with energy and then levels off, a shape that simple secondary production does not predict.",
+      "That excess is solid as a measurement. Dark-matter annihilation and nearby pulsars both remain live explanations.",
+      "Antiproton and nuclei spectra from the same detector keep tightening the background those explanations have to beat.",
+      "The instrument is a running observatory. Later years of data still move the plots."
+    ],
+    "meaning": "AMS did not close the dark-matter question. It removed the excuse that the positron excess was a small-sample fluke, and it forced every model to live inside a much sharper cosmic-ray budget. The interpretation is still a fork, and the data are what make the fork expensive to fudge.",
+    "limits": [
+      "Particle identification at the highest energies is where the detector’s acceptance runs thin.",
+      "A spectral shape is not an identification of the source."
+    ],
+    "openQuestions": [
+      "Does the positron fraction fall at still higher energy, which would favor a cutoff source?",
+      "Do antiprotons and positrons point at the same origin?"
+    ],
+    "scores": {
+      "impact": 92,
+      "evidence": 90,
+      "openness": 72,
+      "exploration": 40,
+      "clarity": 58
+    },
+    "sources": [
+      {
+        "label": "AMS-02 experiment site",
+        "url": "https://ams02.space/"
+      }
+    ]
+  },
+  {
+    "id": "fluid-shifts",
+    "name": "Fluid Shifts",
+    "aka": "Vision Impairment and Intracranial Pressure",
+    "program": "Human Research Program",
+    "center": "NASA Johnson Space Center",
+    "years": "2015–2020",
+    "status": "completed",
+    "domain": "Human research",
+    "platform": "ISS",
+    "summary": "Fluid Shifts studied the headward movement of blood and other fluids in weightlessness, and how that movement lines up with swelling at the back of the eye. The eye changes already had a name in the clinic: spaceflight-associated neuro-ocular syndrome, or SANS.",
+    "findings": [
+      "On orbit, crew members show a durable headward fluid shift. It does not fully relax the way a posture change relaxes it on Earth.",
+      "A subset of flyers develop optic-disc edema, choroidal folds, and a shift toward farsightedness.",
+      "Not every flyer is affected to the same degree, so a single exposure number is the wrong summary.",
+      "Countermeasures under test include lower-body negative pressure and other ways of pulling fluid back toward the feet."
+    ],
+    "meaning": "The eye is a mission-design constraint, not a side note in a medical paper. If some fraction of a crew cannot read a checklist sharply after months in microgravity, a Mars vehicle needs a countermeasure with a mass and a schedule, not only a diagnosis.",
+    "limits": [
+      "Small crews and individual variation. Mechanisms are still being separated: pressure, one-carbon metabolism, and venous drainage all have advocates.",
+      "Imaging on station is excellent and still not the same as a full terrestrial workup."
+    ],
+    "openQuestions": [
+      "Who is susceptible before they ever fly?",
+      "Which countermeasure holds the optic nerve stable for a full transit, not a weekend test?"
+    ],
+    "scores": {
+      "impact": 86,
+      "evidence": 73,
+      "openness": 66,
+      "exploration": 96,
+      "clarity": 68
+    },
+    "sources": [
+      {
+        "label": "Space Station Research Explorer",
+        "url": "https://science.nasa.gov/mission/station/research-explorer/"
+      }
+    ]
+  },
+  {
+    "id": "misse",
+    "name": "MISSE",
+    "aka": "Materials International Space Station Experiment",
+    "program": "Materials and structures",
+    "center": "NASA Langley and partner centers",
+    "years": "2001–ongoing series",
+    "status": "series",
+    "domain": "Materials",
+    "platform": "ISS",
+    "summary": "MISSE bolts small samples to the outside of the station and leaves them in atomic oxygen, ultraviolet light, radiation, and thermal cycling. Series have flown since the early station years. Returned coupons are what a materials engineer can actually hold.",
+    "findings": [
+      "Polymers, coatings, seals, solar-cell cover glass, and thermal blankets erode and discolor at rates a vacuum chamber only approximates.",
+      "Atomic oxygen is the dominant chemical threat in low Earth orbit for many polymers. Samples make that rate visible.",
+      "Flight heritage from returned hardware has steered which coatings later vehicles are willing to fly.",
+      "Each series is its own manifest. A result on one polymer is not a result on the next formulation."
+    ],
+    "meaning": "MISSE is less a discovery than a filter. It tells a program which material survives the outside of a vehicle and which one only survived the brochure. That filter is slow, physical, and hard to replace with a simulation when the formulation is new.",
+    "limits": [
+      "Low Earth orbit is not the radiation or thermal environment of a deep-space cruise.",
+      "Exposure time and pointing differ across series, so rates need the series report beside them."
+    ],
+    "openQuestions": [
+      "Which LEO survivors still behave after a solar-particle event outside Earth’s magnetosphere?",
+      "Can a shorter exposure predict a multi-year one for a new polymer?"
+    ],
+    "scores": {
+      "impact": 80,
+      "evidence": 84,
+      "openness": 70,
+      "exploration": 82,
+      "clarity": 74
+    },
+    "sources": [
+      {
+        "label": "MISSE overview",
+        "url": "https://www.nasa.gov/centers-and-facilities/langley/misse/"
+      }
+    ]
+  },
+  {
+    "id": "flex",
+    "name": "FLEX",
+    "aka": "Flame Extinguishment Experiment",
+    "program": "Combustion science",
+    "center": "NASA Glenn Research Center",
+    "years": "2009–2017",
+    "status": "completed",
+    "domain": "Combustion",
+    "platform": "ISS",
+    "summary": "FLEX burned isolated fuel droplets inside the Combustion Integrated Rack. Without buoyancy, a droplet flame is a quiet sphere instead of a teardrop, which makes extinction and soot easier to measure than in a normal lab flame.",
+    "findings": [
+      "After the visible hot flame went out, several fuels kept burning as a much cooler, dimmer flame that ground tests had not treated as the main event.",
+      "Those cool flames changed how modelers draw the extinction boundary for droplet spray.",
+      "The same rack produced cleaner data on soot and on how suppressants put a flame out when buoyancy cannot help.",
+      "Later combustion series on station, including ACME, continued the same line of work."
+    ],
+    "meaning": "A fire on a spacecraft is a spherical, low-buoyancy problem. FLEX supplied the case that makes suppression models honest, and it uncovered a cool-flame regime that changes the chemistry at the edge of extinction. The practical translation is better detectors and suppressants, not a new engine.",
+    "limits": [
+      "Single droplets are not a cable fire or a storage-rack fire.",
+      "Fuels and atmospheres were selected for the test matrix, not for every cargo on a vehicle."
+    ],
+    "openQuestions": [
+      "Do cool flames appear in the mixed fuels and higher pressures of a real cabin incident?",
+      "Which suppressant still works when gravity is not pulling hot gas away?"
+    ],
+    "scores": {
+      "impact": 83,
+      "evidence": 86,
+      "openness": 74,
+      "exploration": 85,
+      "clarity": 77
+    },
+    "sources": [
+      {
+        "label": "NASA combustion research on station",
+        "url": "https://www.nasa.gov/physical-sciences/combustion-science/"
+      }
+    ]
+  },
+  {
+    "id": "gravity-probe-b",
+    "name": "Gravity Probe B",
+    "aka": "GP-B",
+    "program": "Fundamental Physics",
+    "center": "NASA / Stanford University",
+    "years": "2004–2011",
+    "status": "completed",
+    "domain": "Physics",
+    "platform": "Earth orbit",
+    "summary": "Gravity Probe B flew four ultra-round gyroscopes on a drag-free satellite to watch how Earth twists and curves spacetime. The geodetic effect and the much smaller frame-dragging effect were the two numbers the mission existed to produce.",
+    "findings": [
+      "Both effects were measured in agreement with general relativity, frame-dragging included.",
+      "Unexpected torques on the gyroscopes forced a long, careful recalibration before the frame-dragging number was trustworthy.",
+      "The final uncertainty on frame-dragging was larger than the mission’s original ambition, and still small enough to count as a detection.",
+      "The engineering of the gyros and the drag-free control became part of the scientific result."
+    ],
+    "meaning": "Frame-dragging moved from a blackboard prediction to a measured quantity. The cautionary half matters just as much: a beautiful instrument can hide a systematic, and GP-B’s value includes the years spent refusing to publish the pretty number early.",
+    "limits": [
+      "One spacecraft, one analysis effort, a long argument over systematics.",
+      "Later confirmations from satellite laser ranging carry their own assumptions."
+    ],
+    "openQuestions": [
+      "Can a later gyroscope or atom interferometer shrink the frame-dragging error bar?",
+      "Which of GP-B’s torque lessons should be designed out before the next flight?"
+    ],
+    "scores": {
+      "impact": 88,
+      "evidence": 78,
+      "openness": 82,
+      "exploration": 30,
+      "clarity": 72
+    },
+    "sources": [
+      {
+        "label": "Gravity Probe B at NASA",
+        "url": "https://www.nasa.gov/mission/gravity-probe-b/"
+      }
+    ]
+  },
+  {
+    "id": "osiris-rex",
+    "name": "OSIRIS-REx sample return",
+    "aka": "Bennu samples",
+    "program": "New Frontiers",
+    "center": "NASA Goddard / University of Arizona",
+    "years": "2016–2023",
+    "status": "in-analysis",
+    "domain": "Planetary science",
+    "platform": "Sample return",
+    "summary": "OSIRIS-REx mapped the asteroid Bennu, touched the surface in 2020, and delivered the collected rocks to Utah in September 2023. Lab work on those samples is still early relative to the decades the collection will be studied.",
+    "findings": [
+      "The delivered material is carbon-rich and contains water-bearing minerals, the kind of inventory associated with the raw ingredients of oceans and organic chemistry.",
+      "Phosphates in the sample point to a watery parent environment somewhere in Bennu’s history.",
+      "The touch-and-go sampling worked, though the collector gathered so much rock that the sample head was packed beyond the plan.",
+      "Most of the scientific return is still ahead. A returned rock is a long program, not a landing-day result."
+    ],
+    "meaning": "Bennu is no longer only a remote spectrum. Laboratories can now argue about its minerals with the sample in the room. The mission supports the picture that some asteroids carried water and carbon-bearing material through the early solar system. It does not, by itself, say how life started.",
+    "limits": [
+      "One sampling site on one asteroid.",
+      "Early papers will be revised as more of the collection is allocated."
+    ],
+    "openQuestions": [
+      "Which organic molecules are indigenous, and which could be contamination?",
+      "How does Bennu compare, grain by grain, with Ryugu and with meteorites already on Earth?"
+    ],
+    "scores": {
+      "impact": 91,
+      "evidence": 85,
+      "openness": 77,
+      "exploration": 62,
+      "clarity": 80
+    },
+    "sources": [
+      {
+        "label": "OSIRIS-REx sample science",
+        "url": "https://science.nasa.gov/mission/osiris-rex/"
+      }
+    ]
+  },
+  {
+    "id": "ingenuity",
+    "name": "Ingenuity",
+    "aka": "Mars Helicopter",
+    "program": "Mars 2020 technology demonstration",
+    "center": "NASA Jet Propulsion Laboratory",
+    "years": "2021–2024",
+    "status": "completed",
+    "domain": "Exploration",
+    "platform": "Mars",
+    "summary": "Ingenuity was a small helicopter carried by Perseverance to answer one question: can a rotorcraft lift off in an atmosphere about one percent as thick as Earth’s? The planned test was five flights. The vehicle kept flying as a scout.",
+    "findings": [
+      "The first controlled, powered flight on another planet was 19 April 2021.",
+      "Ingenuity flew 72 times, far past the five-flight demonstration, and ended after a hard landing damaged a rotor.",
+      "Flights returned scouting pictures and proved navigation over terrain the rover had not yet crossed.",
+      "Thin air forced very high rotor speed. That design choice is now a data point for any later Mars aircraft."
+    ],
+    "meaning": "Aerial scouting on Mars is a real operations mode, not a rendering. The limitation is equally concrete: rotorcraft at Jezero bought range and viewpoint, and they also bought a fragile machine that dust, energy, and a single hard landing could end.",
+    "limits": [
+      "A technology demonstration with one vehicle. Weather and terrain at Jezero are not the whole planet.",
+      "It did not carry a science payload comparable to the rover’s."
+    ],
+    "openQuestions": [
+      "What payload mass can a next rotorcraft carry and still fly a useful range?",
+      "Where on Mars is the air too thin, or the terrain too rough, for this approach?"
+    ],
+    "scores": {
+      "impact": 90,
+      "evidence": 96,
+      "openness": 84,
+      "exploration": 92,
+      "clarity": 97
+    },
+    "sources": [
+      {
+        "label": "Ingenuity mission page",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+      }
+    ]
+  },
+  {
+    "id": "lunar-laser-ranging",
+    "name": "Lunar Laser Ranging",
+    "aka": "Apollo retroreflectors",
+    "program": "Apollo surface experiments",
+    "center": "NASA / ground observatories",
+    "years": "1969–ongoing",
+    "status": "active",
+    "domain": "Physics",
+    "platform": "Moon",
+    "summary": "Apollo 11, 14, and 15 left mirrored retroreflectors on the lunar surface. Observatories bounce laser pulses off them and time the round trip. The measurement has run for more than half a century.",
+    "findings": [
+      "The Moon is receding from Earth by about 3.8 centimeters a year.",
+      "The orbit is known well enough to test gravity theories, including the equivalence principle, at a precision few lab setups can touch over this baseline.",
+      "The reflectors are passive. Their limit is dust, alignment, and the patience of the ground stations.",
+      "The same hardware still answers. That longevity is unusual for a human-placed experiment."
+    ],
+    "meaning": "Five decades of one measurement turned the Earth-Moon system into a gravity laboratory. The result people can say out loud, a few centimeters of drift a year, sits on top of a much stricter test of how gravity behaves. New reflectors only matter if they beat this long baseline, not if they merely repeat it.",
+    "limits": [
+      "A handful of small mirrors. Coverage of the lunar librations is good and not uniform.",
+      "The ranging model has to carry tides, atmospheres, and station clocks honestly or the physics signal is fake."
+    ],
+    "openQuestions": [
+      "Would a new reflector at a different site tighten the equivalence-principle test?",
+      "How much have dust and degradation already dimmed the returns?"
+    ],
+    "scores": {
+      "impact": 87,
+      "evidence": 95,
+      "openness": 80,
+      "exploration": 48,
+      "clarity": 84
+    },
+    "sources": [
+      {
+        "label": "Apollo 11 retroreflector",
+        "url": "https://www.nasa.gov/history/apollo-11-mission-overview/"
+      }
+    ]
+  },
+  {
+    "id": "curiosity-rad",
+    "name": "Curiosity RAD",
+    "aka": "Radiation Assessment Detector",
+    "program": "Mars Science Laboratory",
+    "center": "NASA Johnson / Southwest Research Institute",
+    "years": "2012–ongoing",
+    "status": "active",
+    "domain": "Exploration",
+    "platform": "Mars",
+    "summary": "RAD has measured the radiation environment on the cruise to Mars and on the surface inside Gale Crater since Curiosity landed in 2012. It records both the steady galactic cosmic-ray dose and the spikes from solar particle events.",
+    "findings": [
+      "The surface dose is lower than the cruise dose because the planet itself blocks half the sky, and it is still high enough to dominate a crew’s career limit over a long stay.",
+      "Solar particle events punch through the thin atmosphere. A habitat needs a storm shelter, not only a cruising average.",
+      "The instrument separates kinds of particles, which is what shielding models need. A single dose number is not enough to design a wall.",
+      "Gale Crater is one site. Altitude, atmosphere, and subsurface depth change the number."
+    ],
+    "meaning": "Mission designers stopped having to guess the Martian radiation budget from cruise data alone. RAD makes the trade concrete: how much shielding mass to carry, whether to bury a habitat, and how fast a crew has to reach a storm shelter. It does not pick the winning architecture.",
+    "limits": [
+      "One location, on a rover deck rather than inside a habitat mockup.",
+      "Dose rate moves with the solar cycle, so a short slice of the record misleads."
+    ],
+    "openQuestions": [
+      "How much does a few meters of regolith actually buy at a real landing site?",
+      "What biological weighting belongs on these particle species for a multi-year crew?"
+    ],
+    "scores": {
+      "impact": 85,
+      "evidence": 90,
+      "openness": 73,
+      "exploration": 97,
+      "clarity": 76
+    },
+    "sources": [
+      {
+        "label": "Curiosity mission",
+        "url": "https://science.nasa.gov/mission/msl-curiosity/"
+      }
+    ]
+  },
+  {
+    "id": "tissue-chips",
+    "name": "Tissue Chips in Space",
+    "aka": "Organs-on-chips",
+    "program": "NASA / NIH NCATS collaboration",
+    "center": "ISS National Laboratory partners",
+    "years": "2018–ongoing series",
+    "status": "series",
+    "domain": "Biology",
+    "platform": "ISS",
+    "summary": "Tissue chips are small devices that carry living human cells in a structure meant to behave like a piece of organ. NASA and the National Institutes of Health fly them to watch immune, kidney, lung, bone, and other tissues age faster under spaceflight stress than they do in a dish on Earth.",
+    "findings": [
+      "Several organ models have flown and returned, including immune and kidney-related chips, with molecular changes that line up with stresses crews also show.",
+      "The platform is the point: a human-cell model that can be repeated without asking a crew member to be the sample.",
+      "Results are chip-specific. A kidney-chip result is not a statement about bone or brain.",
+      "The series is still building a baseline. It is early to treat any one flight as a drug screen."
+    ],
+    "meaning": "If the accelerated changes are real and repeatable, a chip becomes a way to test a countermeasure before a crew depends on it. That promise is still conditional. The honest reading is that the method has started to return human-relevant data, and the screen is not validated yet.",
+    "limits": [
+      "A chip is not an organ, and a few weeks on station is not a Mars transit.",
+      "Different chips, different labs, different questions. The series name hides that variety."
+    ],
+    "openQuestions": [
+      "Which chip changes predict a change you can also measure in a crew member?",
+      "Can a countermeasure that works in the chip be shown to work in an animal or a human analog?"
+    ],
+    "scores": {
+      "impact": 76,
+      "evidence": 60,
+      "openness": 71,
+      "exploration": 84,
+      "clarity": 63
+    },
+    "sources": [
+      {
+        "label": "Tissue chips collaboration",
+        "url": "https://ncats.nih.gov/research/research-activities/tissue-chip"
+      }
+    ]
+  }
+]
