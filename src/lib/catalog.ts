@@ -1,5 +1,4 @@
-import { DIMENSIONS, type Experiment, type ExperimentStatus, type SourceLink } from "../types";
-
+import { DIMENSIONS, type Experiment, type ExperimentStatus, type FireInsight, type OriginalDatum, type SourceLink } from "../types";
 const STATUSES = new Set<ExperimentStatus>(["completed", "active", "in-analysis", "series"]);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -33,6 +32,30 @@ function requiredSources(value: unknown, label: string): SourceLink[] {
     }
     return { label: requiredString(item.label, `${where} label`), url };
   });
+}
+
+function optionalOriginal(value: unknown, label: string): OriginalDatum[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value)) {
+    throw new Error(`${label} original must be a list.`);
+  }
+  return value.map((item, index) => {
+    const where = `${label} original ${index + 1}`;
+    if (!isRecord(item)) throw new Error(`${where} must be an object.`);
+    return {
+      label: requiredString(item.label, `${where} label`),
+      value: requiredString(item.value, `${where} value`),
+    };
+  });
+}
+
+function optionalInsight(value: unknown, label: string): FireInsight | null {
+  if (value === undefined) return null;
+  if (!isRecord(value)) throw new Error(`${label} insight must be an object.`);
+  return {
+    crew: requiredString(value.crew, `${label} insight crew`),
+    design: requiredString(value.design, `${label} insight design`),
+  };
 }
 
 export function loadCatalog(raw: unknown): Experiment[] {
@@ -81,6 +104,8 @@ export function loadCatalog(raw: unknown): Experiment[] {
       openQuestions: requiredList(item.openQuestions, `${where} openQuestions`),
       scores,
       sources: requiredSources(item.sources, where),
+      original: optionalOriginal(item.original, where),
+      insight: optionalInsight(item.insight, where),
     };
   });
 }

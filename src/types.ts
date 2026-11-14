@@ -1,8 +1,8 @@
 export const DIMENSIONS = [
   {
     key: "impact",
-    label: "Impact",
-    hint: "Did the result move a field or a mission?",
+    label: "Fire-safety impact",
+    hint: "Does it change how fires are prevented, detected or fought?",
   },
   {
     key: "evidence",
@@ -16,8 +16,8 @@ export const DIMENSIONS = [
   },
   {
     key: "exploration",
-    label: "Exploration",
-    hint: "Does it change a later crew or vehicle?",
+    label: "Moon & Mars fit",
+    hint: "Does it apply to cabins, partial gravity and exploration atmospheres?",
   },
   {
     key: "clarity",
@@ -34,6 +34,16 @@ export type ExperimentStatus = "completed" | "active" | "in-analysis" | "series"
 export interface SourceLink {
   label: string;
   url: string;
+}
+
+export interface OriginalDatum {
+  label: string;
+  value: string;
+}
+
+export interface FireInsight {
+  crew: string;
+  design: string;
 }
 
 export interface Experiment {
@@ -53,6 +63,8 @@ export interface Experiment {
   openQuestions: string[];
   scores: Weights;
   sources: SourceLink[];
+  original: OriginalDatum[];
+  insight: FireInsight | null;
 }
 
 export interface RankedExperiment {

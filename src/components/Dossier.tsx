@@ -12,6 +12,7 @@ interface DossierProps {
 
 export function Dossier({ entry, weights, pinned, onPin }: DossierProps) {
   const [copied, setCopied] = useState(false);
+  const [showOriginal, setShowOriginal] = useState(false);
 
   if (!entry) {
     return (
@@ -51,6 +52,55 @@ export function Dossier({ entry, weights, pinned, onPin }: DossierProps) {
       </p>
 
       <p className="summary">{experiment.summary}</p>
+            {experiment.insight && (
+        <section className="insight">
+          <h3>Fire safety insight</h3>
+          <p>
+            <b>For crews:</b> {experiment.insight.crew}
+          </p>
+          <p>
+            <b>For design:</b> {experiment.insight.design}
+          </p>
+          <small>An interpretation of the findings, not a NASA statement.</small>
+        </section>
+      )}
+
+      <button
+        type="button"
+        className="original-btn"
+        aria-expanded={showOriginal}
+        onClick={() => setShowOriginal((open) => !open)}
+      >
+        {showOriginal ? "Hide original NASA data" : "View original NASA data"}
+      </button>
+
+      {showOriginal && (
+        <section className="original-panel">
+          <h3>Original NASA data</h3>
+          {experiment.original.length > 0 ? (
+            <dl className="original-data">
+              {experiment.original.map((row) => (
+                <div key={row.label}>
+                  <dt>{row.label}</dt>
+                  <dd>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : (
+            <p>No original figures have been added for this experiment yet.</p>
+          )}
+          <p className="original-note">Check these against NASA's own pages:</p>
+          <ul className="sources">
+            {experiment.sources.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} target="_blank" rel="noreferrer">
+                  {source.label} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section>
         <h3>Reading</h3>
@@ -101,19 +151,6 @@ export function Dossier({ entry, weights, pinned, onPin }: DossierProps) {
                 <span style={{ width: `${experiment.scores[dimension.key]}%` }} />
               </span>
               <b>{experiment.scores[dimension.key]}</b>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h3>Sources</h3>
-        <ul className="sources">
-          {experiment.sources.map((source) => (
-            <li key={source.url}>
-              <a href={source.url} target="_blank" rel="noreferrer">
-                {source.label}
-              </a>
             </li>
           ))}
         </ul>

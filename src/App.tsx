@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Ask } from "./components/Ask";
 import { Compare } from "./components/Compare";
 import { Dossier } from "./components/Dossier";
 import { FiltersPanel, WeightsPanel } from "./components/Panels";
@@ -9,18 +10,20 @@ import type { Experiment, Weights } from "./types";
 
 const MAX_PINS = 3;
 
-type View = "filters" | "weights" | "compare";
+type View = "filters" | "weights" | "compare" | "ask";
 
 const TITLES: Record<View, string> = {
   filters: "Search & filters",
   weights: "Weights",
   compare: "Compare",
+  ask: "Ask the atlas",
 };
 
 const HINTS: Record<View, string> = {
   filters: "Find an experiment by name, domain or platform",
   weights: "Decide what matters to you",
   compare: "Read pinned experiments side by side",
+  ask: "Ask a fire safety question, answered from the record",
 };
 
 interface AppProps {
@@ -96,6 +99,7 @@ export function App({ catalog, catalogError }: AppProps) {
     filters: activeFilters ? `${activeFilters} active` : `${visible.length} of ${catalog.length}`,
     weights: PRESETS.find((preset) => preset.id === activePreset)?.label ?? "Custom",
     compare: `${pinnedIds.length} of ${MAX_PINS}`,
+    ask: "AI",
   };
 
   function togglePin(id: string) {
@@ -129,9 +133,9 @@ export function App({ catalog, catalogError }: AppProps) {
     <div className={view ? "home has-panel" : "home"}>
       <header className="home-brand">
         <p className="mark">Orrery</p>
-        <h1>NASA experiment atlas</h1>
+        <h1>NASA fire safety atlas</h1>
         <p className="lede">
-          A reading room for public investigations. Rank them with your own weights, then read what the record actually supports.
+          What NASA's microgravity fire experiments show, ranked by what matters for crews on the Moon and Mars.
         </p>
       </header>
 
@@ -198,15 +202,19 @@ export function App({ catalog, catalogError }: AppProps) {
 
           {view === "compare" && <Compare entries={pinned} onRemove={togglePin} onOpen={setSelectedId} />}
 
-          <div className="panel-ranking">
-            <Stage
-              entries={visible}
-              selectedId={selectedId}
-              pinnedIds={pinnedIds}
-              onSelect={setSelectedId}
-              onPin={togglePin}
-            />
-          </div>
+          {view === "ask" && <Ask catalog={catalog} onOpen={setSelectedId} />}
+
+          {view !== "ask" && (
+            <div className="panel-ranking">
+              <Stage
+                entries={visible}
+                selectedId={selectedId}
+                pinnedIds={pinnedIds}
+                onSelect={setSelectedId}
+                onPin={togglePin}
+              />
+            </div>
+          )}
         </section>
       )}
 
@@ -218,6 +226,7 @@ export function App({ catalog, catalogError }: AppProps) {
               Close
             </button>
             <Dossier
+              key={selected.experiment.id}
               entry={selected}
               weights={weights}
               pinned={pinnedIds.includes(selected.experiment.id)}
