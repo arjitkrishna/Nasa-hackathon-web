@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Ask } from "./components/Ask";
+import { Brief } from "./components/Brief";
 import { Compare } from "./components/Compare";
 import { Dossier } from "./components/Dossier";
 import { Habitat } from "./components/Habitat";
@@ -11,13 +12,14 @@ import type { Experiment, Weights } from "./types";
 
 const MAX_PINS = 3;
 
-type View = "filters" | "weights" | "compare" | "habitat" | "ask";
+type View = "filters" | "weights" | "compare" | "habitat" | "brief" | "ask";
 
 const TITLES: Record<View, string> = {
   filters: "Search & filters",
   weights: "Weights",
   compare: "Compare",
   habitat: "Habitat match",
+  brief: "Fire safety brief",
   ask: "Ask the atlas",
 };
 
@@ -26,6 +28,7 @@ const HINTS: Record<View, string> = {
   weights: "Decide what matters to you",
   compare: "Read pinned experiments side by side",
   habitat: "Which experiments fit a station, Moon base or spacesuit?",
+  brief: "Make a one-page cited summary to copy, download or print",
   ask: "Ask a fire safety question, answered from the record",
 };
 
@@ -103,6 +106,7 @@ export function App({ catalog, catalogError }: AppProps) {
     weights: PRESETS.find((preset) => preset.id === activePreset)?.label ?? "Custom",
     compare: `${pinnedIds.length} of ${MAX_PINS}`,
     habitat: "Match",
+    brief: "Export",
     ask: "AI",
   };
 
@@ -132,6 +136,8 @@ export function App({ catalog, catalogError }: AppProps) {
       </main>
     );
   }
+
+  const showRanking = view === "filters" || view === "weights" || view === "compare";
 
   return (
     <div className={view ? "home has-panel" : "home"}>
@@ -208,9 +214,11 @@ export function App({ catalog, catalogError }: AppProps) {
 
           {view === "habitat" && <Habitat catalog={catalog} onOpen={setSelectedId} />}
 
+          {view === "brief" && <Brief entries={visible} pinned={pinned} />}
+
           {view === "ask" && <Ask catalog={catalog} onOpen={setSelectedId} />}
 
-          {view !== "ask" && view !== "habitat" && (
+          {showRanking && (
             <div className="panel-ranking">
               <Stage
                 entries={visible}

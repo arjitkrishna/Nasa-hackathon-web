@@ -6,7 +6,7 @@ interface HabitatProps {
   onOpen: (id: string) => void;
 }
 
-interface HabitatOption {
+export interface HabitatOption {
   id: string;
   label: string;
   note: string;
@@ -14,7 +14,7 @@ interface HabitatOption {
   pressure: number; // atmospheres
 }
 
-const HABITATS: HabitatOption[] = [
+export const HABITATS: HabitatOption[] = [
   { id: "station", label: "Space station", note: "Earth-like air: about 21% oxygen at 1 atm (14.7 psi).", oxygen: 21, pressure: 1 },
   { id: "moon", label: "Moon base or pressurized rover", note: "Expected: 30% oxygen or more at 10.2 psi (0.69 atm) or less.", oxygen: 30, pressure: 0.69 },
   { id: "suit", label: "Spacesuit", note: "100% oxygen at only 4.3 psi (0.29 atm).", oxygen: 100, pressure: 0.29 },

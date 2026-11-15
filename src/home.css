@@ -147,3 +147,22 @@
 .match-row.is-unknown .match-score { color: var(--quiet); font-size: 14px; }
 .match-bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: rgba(244, 238, 228, 0.1); overflow: hidden; }
 .match-bar span { display: block; height: 100%; background: var(--lime); }
+.compare-summary { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+.compare-scroll { overflow-x: auto; }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 14px; }
+.compare-table th, .compare-table td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--line); }
+.compare-table thead th { border-top: 0; vertical-align: bottom; }
+.compare-table tbody th { width: 150px; font-weight: 500; color: var(--muted); }
+.compare-name { display: block; background: transparent; border: 0; padding: 0; margin-bottom: 4px; text-align: left; font-family: Fraunces, Georgia, serif; font-size: 20px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.compare-table .score { display: block; margin-bottom: 8px; color: var(--lime); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
+.compare-group th { padding-top: 22px; color: var(--quiet); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.tag { display: block; width: fit-content; margin-top: 4px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 99px; font-size: 11px; color: var(--quiet); }
+.tag.same { color: var(--lime); border-color: rgba(223, 242, 90, 0.4); }
+.tag.differs { color: var(--coral); border-color: rgba(255, 138, 91, 0.5); }
+.ask-work { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.ask-work summary { cursor: pointer; color: var(--lime); font-size: 14px; }
+.ask-work p { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+.ask-work h4 { margin: 16px 0 6px; color: var(--quiet); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.ask-work ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+.ask-work li + li { margin-top: 6px; }
+.ask-work strong { color: var(--ink); }

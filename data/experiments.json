@@ -164,7 +164,7 @@
     "aka": "Burning and Suppression of Solids II",
     "program": "Microgravity Science Glovebox",
     "center": "NASA Glenn Research Center",
-    "years": "2012–2014",
+    "years": "2014",
     "status": "completed",
     "domain": "Material flammability",
     "platform": "ISS",
@@ -319,6 +319,194 @@
       { "label": "Baffle types", "value": "Transparent, black, reflective" },
       { "label": "Materials", "value": "SIBAL cotton-fiberglass fabric and 1 mm thick PMMA slab" },
       { "label": "Steady flame, concurrent fabric tests", "value": "Flow speeds below 15 cm/s" }
+    ]
+  },
+    {
+    "id": "bass",
+    "name": "BASS",
+    "aka": "Burning and Suppression of Solids",
+    "program": "Microgravity Science Glovebox",
+    "center": "NASA Glenn Research Center",
+    "years": "2009–2013 (dates listed in PSI)",
+    "status": "completed",
+    "domain": "Material flammability",
+    "platform": "ISS",
+    "summary": "Burned fabrics, Nomex, Ultem and acrylic samples in a small wind tunnel inside the space station glovebox to see how airflow speed affects ignition, flame growth, flame spread and extinction.",
+    "findings": [
+      "Samples included thin cotton-fiberglass fabrics, Nomex, Ultem and acrylic (PMMA) slabs, rods and spheres, burned in both concurrent and opposed airflow.",
+      "Airflow speeds up to 40 cm/s were used, and the effects of airflow speed on flame appearance, growth and extinction were measured.",
+      "Ultem and Nomex HT90-40 samples did not burn in space station air (21 to 22 percent oxygen) at flow speeds around 15 cm/s, similar to normal gravity. A Nomex-III sample did burn.",
+      "Together with BASS-II, it gave what NASA's paper calls the first clean and unambiguous determination of a low-speed quenching boundary for concurrent flame spread, on a cotton-fiberglass fabric."
+    ],
+    "meaning": "Whether a solid material keeps burning depends on airflow as well as oxygen, so ventilation is part of fire safety.",
+    "insight": {
+      "crew": "Ventilation affects whether a material keeps burning, so airflow control matters alongside oxygen level.",
+      "design": "Screen materials by oxygen and airflow together, not by oxygen alone."
+    },
+    "fuel": "Cotton-fiberglass fabric (SIBAL), Nomex, Ultem, acrylic (PMMA) slabs, rods and spheres",
+    "hardware": "Small flow duct in the Microgravity Science Glovebox",
+    "measurements": "Flame appearance, growth, spread and extinction in opposed and concurrent flow",
+    "conditions": { "flowMin": 0, "flowMax": 40 },
+    "limits": [
+      "Small samples in a glovebox wind tunnel, not a full cabin.",
+      "Oxygen could only be lowered through a nitrogen dilution scheme that was added in BASS-II.",
+      "NASA presentations give different oxygen ranges for these tests, so oxygen is left blank here until it is checked in PSI."
+    ],
+    "openQuestions": [
+      "Do small samples in a duct predict flame spread in a full cabin?",
+      "Where is the oxygen and airflow boundary for materials planned for a Moon base atmosphere?"
+    ],
+    "scores": {
+      "impact": 78,
+      "evidence": 82,
+      "openness": 85,
+      "exploration": 72,
+      "clarity": 78
+    },
+    "sources": [
+      { "label": "PSI-26 dataset (DOI)", "url": "https://doi.org/10.60555/58h4-dy80" },
+      { "label": "NASA NTRS: Thickness and fuel preheating effects from the BASS experiment", "url": "https://ntrs.nasa.gov/api/citations/20140011099/downloads/20140011099.pdf" },
+      { "label": "NASA NTRS: BASS and BASS-II quenching boundary results", "url": "https://ntrs.nasa.gov/api/citations/20150008962/downloads/20150008962.pdf" },
+      { "label": "NSF PAR: confinement effects, with a description of BASS", "url": "https://par.nsf.gov/biblio/10205846" },
+      { "label": "NASA Physical Sciences Informatics (PSI), where the open data lives", "url": "https://science.nasa.gov/physical-sciences-informatics-psi/history-of-physical-science-informatics/" }
+    ],
+    "original": [
+      { "label": "PSI record", "value": "PSI-26, version 4 (submitted 30 June 2013)" },
+      { "label": "PSI sub-research area", "value": "Spacecraft Fire Safety" },
+      { "label": "PSI investigation dates", "value": "1 October 2009 to 30 June 2013" },
+      { "label": "Data size and license", "value": "152.32 GB, CC0-1.0" },
+      { "label": "Related PSI investigations", "value": "PSI-107, PSI-25" },
+      { "label": "Samples", "value": "Cotton-fiberglass fabric (SIBAL), Nomex, Ultem, PMMA slabs, rods and spheres" },
+      { "label": "Flow configurations", "value": "Concurrent and opposed" },
+      { "label": "Airflow speeds", "value": "Up to 40 cm/s (one NASA presentation)" },
+      { "label": "Cabin air tests", "value": "Ultem and Nomex HT90-40 did not burn at 21 to 22% oxygen and flow around 15 cm/s" },
+      { "label": "Facility", "value": "Microgravity Science Glovebox" }
+    ]
+  },
+  {
+    "id": "flex-2",
+    "name": "FLEX-2",
+    "aka": "Flame Extinguishment Experiment-2",
+    "program": "Combustion Integrated Rack (Multi-user Droplet Combustion Apparatus)",
+    "center": "NASA Glenn Research Center",
+    "years": "2016–2019 (dates listed in PSI)",
+    "status": "completed",
+    "domain": "Droplet combustion",
+    "platform": "ISS",
+    "summary": "Extended FLEX by burning free-floating liquid fuel droplets, including reference fuels and fuel mixtures, to study how fast they burn, when soot forms and how mixtures evaporate before burning.",
+    "findings": [
+      "NASA describes FLEX-2 as looking at how quickly fuel droplets burn, the conditions needed for soot to form, and how mixtures of liquid fuels evaporate before burning.",
+      "NASA says understanding these processes could lead to safer spacecraft and more efficient liquid-fuel engines on Earth.",
+      "Researchers varied the inert gas around the droplet, such as carbon dioxide, helium and sometimes xenon, to see how it changes extinguishment.",
+      "The surrogate-fuel part of FLEX-2 burned droplets in room-temperature air at 1 atm, and its flame images are openly available through NASA's open data site."
+    ],
+    "meaning": "The gas around a burning droplet changes how it goes out, so suppression choices need to be tested rather than assumed.",
+    "insight": {
+      "crew": "How a fire goes out depends on the gas around it, so extinguishing agents should be judged with microgravity data.",
+      "design": "Test candidate suppression gases in droplet and solid-fuel experiments before specifying them for a habitat."
+    },
+    "fuel": "n-heptane, n-decane and n-octane droplets (surrogate fuels), plus fuel mixtures",
+    "hardware": "Multi-user Droplet Combustion Apparatus in the Combustion Integrated Rack",
+    "measurements": "Droplet and flame imaging, burning rate, soot formation",
+    "conditions": {},
+    "limits": [
+      "Liquid fuel droplets only, not the solid materials found in a cabin.",
+      "Droplets burn in a still chamber with no airflow, so the results do not show flame behavior in a ventilated cabin.",
+      "Only the surrogate-fuel tests have conditions confirmed here (air at 1 atm), so oxygen and pressure are left blank until checked in PSI."
+    ],
+    "openQuestions": [
+      "Do results with reference-fuel droplets transfer to solid cabin materials?",
+      "Which inert gas works best at the pressures planned for a Moon base?"
+    ],
+    "scores": {
+      "impact": 70,
+      "evidence": 78,
+      "openness": 82,
+      "exploration": 66,
+      "clarity": 72
+    },
+    "sources": [
+      { "label": "PSI-68 dataset (DOI)", "url": "https://doi.org/10.60555/byp8-h018" },
+      { "label": "NASA combustion safety summary (FLEX-2, SoFIE and others), via Phys.org", "url": "https://phys.org/news/2023-12-combustion-safety.pdf" },
+      { "label": "FLEX overview paper, Microgravity Science and Technology", "url": "https://link.springer.com/doi/10.1007/s12217-014-9372-2" },
+      { "label": "Paper using FLEX-2 surrogate-fuel flame images (arXiv)", "url": "https://arxiv.org/pdf/2607.16587" },
+      { "label": "NASA Physical Sciences Informatics (PSI), where the open data lives", "url": "https://science.nasa.gov/physical-sciences-informatics-psi/history-of-physical-science-informatics/" }
+    ],
+    "original": [
+      { "label": "PSI record", "value": "PSI-68, version 6 (submitted 30 September 2019)" },
+      { "label": "PSI proposal title", "value": "The Fundamental Studies in Droplet Combustion and Flame Extinguishment in Microgravity" },
+      { "label": "PSI sub-research area", "value": "Spacecraft Fire Safety" },
+      { "label": "PSI investigation dates", "value": "12 August 2016 to 30 September 2019" },
+      { "label": "Data size and license", "value": "1.11 TB, CC0-1.0" },
+      { "label": "Surrogate fuels", "value": "n-heptane, n-decane, n-octane" },
+      { "label": "Surrogate-fuel test atmosphere", "value": "Room-temperature air at 1 atm" },
+      { "label": "Droplet formation", "value": "Two needles form a liquid bridge, then retract to leave an untethered droplet" },
+      { "label": "Flame camera", "value": "Color camera, 640 x 480 pixels, 30 frames per second" },
+      { "label": "Backlit droplet camera", "value": "High Bit-depth Multispectral camera, 30 frames per second" },
+      { "label": "Inert gases tried", "value": "Carbon dioxide, helium, sometimes xenon (per a FLEX-2 co-investigator)" }
+    ]
+  },
+  {
+    "id": "cfi",
+    "name": "CFI",
+    "aka": "Cool Flames Investigation (droplets)",
+    "program": "Combustion Integrated Rack (Multi-user Droplet Combustion Apparatus)",
+    "center": "NASA Glenn Research Center",
+    "years": "2020–2021 (dates listed in PSI)",
+    "status": "completed",
+    "domain": "Droplet combustion",
+    "platform": "ISS",
+    "summary": "Followed up the discovery of cool flames in FLEX by burning large liquid fuel droplets to study how fuel keeps burning after the visible flame goes out.",
+    "findings": [
+      "In one CFI test with a 4 mm dodecane droplet, the dim blue hot flame oscillated once and went out, but the droplet kept shrinking because a cool flame kept burning.",
+      "Cool flames are much dimmer than hot flames, so in these tests you can mostly tell they are burning because the droplet keeps getting smaller.",
+      "Cool flames burn at about 600 to 1000 K, far cooler than the 1100 to 2200 K of typical hot flames.",
+      "Researchers explain that on Earth buoyancy limits how long gases stay near a burning droplet, so cool-flame chemistry does not have time to develop, while in microgravity it does."
+    ],
+    "meaning": "Fuel can keep burning after the visible flame disappears, in a dim cool flame that cameras may not show.",
+    "insight": {
+      "crew": "In droplet tests a flame that looked out was still burning as a cool flame, so do not assume no visible flame means the fire is out until this is checked for cabin materials.",
+      "design": "Verification and detection procedures should not rely only on seeing a flame. Test whether sensors catch cool-flame burning."
+    },
+    "fuel": "Large liquid fuel droplets (for example a 4 mm dodecane droplet)",
+    "hardware": "Multi-user Droplet Combustion Apparatus in the Combustion Integrated Rack",
+    "measurements": "Droplet and flame imaging, droplet size over time",
+    "conditions": {},
+    "limits": [
+      "Liquid fuel droplets only, not cabin solids or gases.",
+      "Cool flames are very dim, so they were mainly detected through the shrinking droplet rather than by light.",
+      "Test conditions are not listed here yet. Check the Experiment Table on the CFI page in PSI."
+    ],
+    "openQuestions": [
+      "Do cool flames occur around solid cabin materials?",
+      "Can fire detectors sense a cool flame?"
+    ],
+    "scores": {
+      "impact": 70,
+      "evidence": 74,
+      "openness": 80,
+      "exploration": 62,
+      "clarity": 80
+    },
+    "sources": [
+      { "label": "PSI-39 dataset (DOI)", "url": "https://doi.org/10.60555/m6pj-a914" },
+      { "label": "NASA ISS Science Blog: Science in Short, Cool Flames", "url": "https://blogs.nasa.gov/ISS_Science_Blog/2017/04" },
+      { "label": "UC San Diego: cool burning flames discovered in space", "url": "https://today.ucsd.edu/story/researchers_discover_cool_burning_flames_in_space_that_could_lead_to_better" },
+      { "label": "University of Maryland: unusual flames aboard the ISS (cool flame temperatures)", "url": "https://me.umd.edu/news/story/unusual-flames-discovered-aboard-the-international-space-station" },
+      { "label": "NASA Physical Sciences Informatics (PSI), where the open data lives", "url": "https://science.nasa.gov/physical-sciences-informatics-psi/history-of-physical-science-informatics/" }
+    ],
+    "original": [
+      { "label": "PSI record", "value": "PSI-39, version 4 (submitted 18 September 2024)" },
+      { "label": "PSI sub-research area", "value": "Droplets" },
+      { "label": "PSI investigation dates", "value": "1 October 2020 to 20 October 2021" },
+      { "label": "Sponsor", "value": "ISS National Laboratory with the National Science Foundation (NL-NSF)" },
+      { "label": "Data size and license", "value": "669.52 GB, CC0-1.0" },
+      { "label": "Related PSI investigation", "value": "PSI-69" },
+      { "label": "Example test", "value": "4 mm dodecane droplet" },
+      { "label": "Observed", "value": "Hot flame oscillates once and goes out, cool flame keeps burning" },
+      { "label": "Cool flame temperature", "value": "About 600 to 1000 K" },
+      { "label": "Typical hot flame temperature", "value": "About 1100 to 2200 K" },
+      { "label": "Hardware", "value": "Multi-user Droplet Combustion Apparatus in the Combustion Integrated Rack" }
     ]
   }
 ]

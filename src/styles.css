@@ -222,3 +222,22 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--lime); outline-
   .row-hit { grid-template-columns: 36px minmax(0, 1fr); }
   .meta { display: none; }
 }
+.brief-controls { display: grid; gap: 14px; margin-bottom: 8px; }
+.brief-label { margin: 0 0 6px; color: var(--quiet); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.brief-source-note { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.brief-actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.brief-sheet { background: var(--paper); color: var(--paper-ink); border-radius: 18px; padding: 28px 28px 32px; }
+.brief-sheet h2 { margin: 0 0 8px; font-size: 32px; line-height: 1.05; }
+.brief-sheet h3 { margin: 24px 0 8px; font-size: 22px; }
+.brief-sheet p, .brief-sheet li { font-size: 14.5px; line-height: 1.5; }
+.brief-sheet p { margin: 8px 0; }
+.brief-sheet ul { margin: 6px 0 10px; padding-left: 20px; }
+.brief-sheet li + li { margin-top: 4px; }
+
+@media print {
+  body { background: #fff !important; }
+  .home { max-width: none; padding: 0 !important; }
+  .home > *:not(.panel), .panel-head, .brief-controls, .brief-actions, .drawer, .drawer-backdrop { display: none !important; }
+  .panel { border: 0; margin: 0; padding: 0; }
+  .brief-sheet { border-radius: 0; padding: 0; background: #fff; }
+}
